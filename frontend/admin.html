@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LUXE MARKET — Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="min-h-screen bg-slate-50">
+  <header class="bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <h1 class="text-xl font-bold">Admin Dashboard</h1>
+      <a href="./index.html" class="text-teal-600 hover:underline">View Storefront</a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid md:grid-cols-3 gap-6">
+      <section class="md:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 p-5">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-lg font-semibold">Products</h2>
+          <button id="new-product" class="px-4 py-2 bg-teal-500 text-white rounded-lg">New Product</button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead class="text-left text-slate-600">
+              <tr>
+                <th class="py-2 pr-4">ID</th>
+                <th class="py-2 pr-4">Title</th>
+                <th class="py-2 pr-4">Category</th>
+                <th class="py-2 pr-4">Price</th>
+                <th class="py-2 pr-4">Featured</th>
+                <th class="py-2 pr-4">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="products-body" class="align-top"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-lg font-semibold">Orders</h2>
+          <button id="refresh-orders" class="px-3 py-1.5 border rounded-lg">Refresh</button>
+        </div>
+        <div id="orders-list" class="space-y-3 max-h-[28rem] overflow-auto"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal-root"></div>
+
+  <script type="module" src="./admin.js"></script>
+</body>
+</html>
